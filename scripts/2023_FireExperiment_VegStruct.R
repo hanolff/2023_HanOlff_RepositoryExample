@@ -12,7 +12,6 @@ rm(list = ls())
 
 #' restore the libraries to the version used to develop the script
 # renv::restore()
-renv::snapshot()
 
 #' load required libraries
 library(tidyverse)
