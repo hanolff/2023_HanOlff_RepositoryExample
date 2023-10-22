@@ -22,8 +22,8 @@ library(multcompView)
 ##### read and merge the data #####
 #' Show the tables in  the database with explanation of contents
 tables_link<-"https://docs.google.com/spreadsheets/d/e/2PACX-1vSZ62o9ummnSZOYOZ2nwYNT6-xk9fngVpFhdYAIB2DRXhaOh-iKblWPmUjkPMJXMvqAmXFvcWBPYLdA/pub?gid=138313207&single=true&output=csv"
-read_csv(tables_link,show_col_types = F) %>%
-  dplyr::select(Table_ID,Contents)
+tables<-read_csv(tables_link,show_col_types = F) 
+tables
 
 #' show validated relations between tables in the database, that can be used in, e.g. left_join()
 relations_link<-"https://docs.google.com/spreadsheets/d/e/2PACX-1vSZ62o9ummnSZOYOZ2nwYNT6-xk9fngVpFhdYAIB2DRXhaOh-iKblWPmUjkPMJXMvqAmXFvcWBPYLdA/pub?gid=115450686&single=true&output=csv"
@@ -33,7 +33,8 @@ read_csv(relations_link, show_col_types = F) |>
 
 # Read the relevant data tables from the database
 DimExpPlot_link<-"https://docs.google.com/spreadsheets/d/e/2PACX-1vSZ62o9ummnSZOYOZ2nwYNT6-xk9fngVpFhdYAIB2DRXhaOh-iKblWPmUjkPMJXMvqAmXFvcWBPYLdA/pub?gid=1416215494&single=true&output=csv"
-DimExpPlot<- read_csv(DimExpPlot_link, show_col_types = F) 
+DimExpPlot<- read_csv(DimExpPlot_link,show_col_types = F) 
+DimExpPlot
 FactVegStruc_link<-"https://docs.google.com/spreadsheets/d/e/2PACX-1vSZ62o9ummnSZOYOZ2nwYNT6-xk9fngVpFhdYAIB2DRXhaOh-iKblWPmUjkPMJXMvqAmXFvcWBPYLdA/pub?gid=498413300&single=true&output=csv"
 FactVegStruc<- read_csv(FactVegStruc_link, show_col_types = F) |>
   mutate(Date=lubridate::dmy(Date),
