@@ -38,7 +38,8 @@ FactVegStruc_link<-"https://docs.google.com/spreadsheets/d/e/2PACX-1vSZ62o9ummnS
 FactVegStruc<- read_csv(FactVegStruc_link, show_col_types = F) |>
   mutate(Date=lubridate::dmy(Date),
          FirstDate=lubridate::dmy(FirstDate))
-#' show the unique dates in the dataset
+
+#' show the unique dates in the dataset, and sort these by date
 unique(sort(FactVegStruc$FirstDate))
 
 # merge the data tables based on the database relations (common variables)
