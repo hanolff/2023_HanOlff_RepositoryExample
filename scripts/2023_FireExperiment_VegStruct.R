@@ -11,7 +11,7 @@
 rm(list = ls()) 
 
 #' restore the libraries to the version used to develop the script
-# renv::restore()
+renv::restore()
 
 #' load required libraries
 library(tidyverse)
@@ -108,4 +108,5 @@ tukey <- emmeans::emmeans(model02, "groups", type = "response")
 multcomp::cld(tukey, Letter="abcdefg")
 #' this means that four groups are different, while bush clearing within 
 #' grazing and bush clearing within ungrazed is not significantly different 
+# end of the script
 
