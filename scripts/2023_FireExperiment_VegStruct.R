@@ -113,5 +113,8 @@ tukey <- emmeans::emmeans(model02, "groups", type = "response")
 multcomp::cld(tukey, Letter="abcdefg")
 #' this means that four groups are different, while bush clearing within 
 #' grazing and bush clearing within ungrazed is not significantly different 
-# end of the script
+
+# add the letters to the figure
+# where means with the same letter are not significantly different 
+# (to be completed)
 
