@@ -117,13 +117,15 @@ multcomp::cld(tukey, Letter="abcdefg")
 
 # add the letters to the figure
 # where means with the same letter are not significantly different 
-<<<<<<< HEAD
+
 # (to be completed)
 ### change
-=======
+
 # (to be completed) - but don't know how
 ### looking forward to the results
 
 # test comment milenka
 # Are we allowed to install new packages?
->>>>>>> 5496425b21862fb63852c5ae19ca3f469bf51a6f
+
+
+
