@@ -25,17 +25,22 @@ tables_link<-"https://docs.google.com/spreadsheets/d/e/2PACX-1vSZ62o9ummnSZOYOZ2
 tables<-read_csv(tables_link,show_col_types = F) 
 tables
 
+#' show variables in the dataset, their explanation
+variables_link<-"https://docs.google.com/spreadsheets/d/e/2PACX-1vSZ62o9ummnSZOYOZ2nwYNT6-xk9fngVpFhdYAIB2DRXhaOh-iKblWPmUjkPMJXMvqAmXFvcWBPYLdA/pub?gid=115450686&single=true&output=csv"
+variables<-read_csv(variables_link, show_col_types = F)
+variables
 #' show validated relations between tables in the database, that can be used in, e.g. left_join()
-relations_link<-"https://docs.google.com/spreadsheets/d/e/2PACX-1vSZ62o9ummnSZOYOZ2nwYNT6-xk9fngVpFhdYAIB2DRXhaOh-iKblWPmUjkPMJXMvqAmXFvcWBPYLdA/pub?gid=115450686&single=true&output=csv"
-read_csv(relations_link, show_col_types = F) |>
+relations<-variables |>
   dplyr::filter(relational=="yes") |>
   dplyr::arrange(Variable_ID,Table_ID)
+relations
 
-# Read the relevant data tables from the database
-DimExpPlot_link<-"https://docs.google.com/spreadsheets/d/e/2PACX-1vSZ62o9ummnSZOYOZ2nwYNT6-xk9fngVpFhdYAIB2DRXhaOh-iKblWPmUjkPMJXMvqAmXFvcWBPYLdA/pub?gid=1416215494&single=true&output=csv"
+#' Read the relevant data tables from the database
+DimExpPlot_link<-as.character(tables[tables$Table_ID=="DimExpPlot","CSV_link"])
 DimExpPlot<- read_csv(DimExpPlot_link,show_col_types = F) 
 DimExpPlot
-FactVegStruc_link<-"https://docs.google.com/spreadsheets/d/e/2PACX-1vSZ62o9ummnSZOYOZ2nwYNT6-xk9fngVpFhdYAIB2DRXhaOh-iKblWPmUjkPMJXMvqAmXFvcWBPYLdA/pub?gid=498413300&single=true&output=csv"
+
+FactVegStruc_link<-as.character(tables[tables$Table_ID=="FactVegStruc","CSV_link"])
 FactVegStruc<- read_csv(FactVegStruc_link, show_col_types = F) |>
   mutate(Date=lubridate::dmy(Date),
          FirstDate=lubridate::dmy(FirstDate))
