@@ -117,5 +117,6 @@ multcomp::cld(tukey, Letter="abcdefg")
 
 # add the letters to the figure
 # where means with the same letter are not significantly different 
-# (to be completed)
+# (to be completed) - but don't know how
+
 
