@@ -119,3 +119,5 @@ multcomp::cld(tukey, Letter="abcdefg")
 # where means with the same letter are not significantly different 
 # (to be completed)
 
+
+# Are we allowed to install new packages?
