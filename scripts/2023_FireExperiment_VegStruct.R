@@ -15,9 +15,9 @@ renv::restore()
 
 #' load required libraries
 library(tidyverse)
-library(emmeans)
-library(multcomp)
-library(multcompView)
+library(emmeans) # for tukey test
+library(multcomp) # for tukey test
+library(multcompView) # for tukey test
 
 ##### read and merge the data #####
 #' Show the tables in  the database with explanation of contents
