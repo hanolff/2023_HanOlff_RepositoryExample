@@ -124,6 +124,6 @@ multcomp::cld(tukey, Letter="abcdefg")
 # (to be completed) - but don't know how
 
 
-
+# test comment milenka
 # Are we allowed to install new packages?
 >>>>>>> 5496425b21862fb63852c5ae19ca3f469bf51a6f
