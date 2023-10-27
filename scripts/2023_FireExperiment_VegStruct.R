@@ -18,7 +18,8 @@ library(tidyverse)
 library(emmeans) # for tukey test
 library(multcomp) # for tukey test
 library(multcompView) # for tukey test
-
+library(performance) # For check_model to check assumptions
+ 
 ##### read and merge the data #####
 #' Show the tables in  the database with explanation of contents
 tables_link<-"https://docs.google.com/spreadsheets/d/e/2PACX-1vSZ62o9ummnSZOYOZ2nwYNT6-xk9fngVpFhdYAIB2DRXhaOh-iKblWPmUjkPMJXMvqAmXFvcWBPYLdA/pub?gid=138313207&single=true&output=csv"
